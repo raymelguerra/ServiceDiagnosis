@@ -3,3 +3,6 @@
 ################################################################################
 
 /.vs
+/CuallimexManagement/.vs
+/CuallimexManagement/bin/Debug/net6.0
+/CuallimexManagement/obj

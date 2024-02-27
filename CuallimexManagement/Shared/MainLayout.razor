@@ -1,0 +1,42 @@
+﻿@inherits LayoutComponentBase
+
+<PageTitle>CuallimexManagement</PageTitle>
+
+<MudThemeProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+
+<MudLayout>
+    <MudAppBar Elevation="1">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@ToggleDrawer" />
+        <MudSpacer />
+        <MudIconButton Icon="@Icons.Rounded.Person" Color="Color.Inherit" Link="#" Target="_blank" />
+    </MudAppBar>
+    <MudDrawer @bind-Open="@open" Breakpoint="@Breakpoint.Sm" Elevation="1">
+        <MudDrawerHeader hidden="@(!open)">
+            <MudImage Fluid="true" Width="150" Src="img/cuallimex_logo.png" Alt="Swedish Farm House" Class="rounded-lg" />
+        </MudDrawerHeader>
+        <MudNavMenu Dense="true" Rounded="true" Margin="Margin.Dense" Color="Color.Primary" Class="pa-2">
+            <MudNavGroup Title="Diagnósticos" Expanded="true" Icon="@Icons.Material.Filled.TireRepair">
+                <MudNavLink Icon="@Icons.Material.Filled.PlaylistAdd" Href="/">Crear Diagnósticos</MudNavLink>
+                <MudNavLink Icon="@Icons.Material.Filled.ListAlt" Href="/users">Listar Diagnósticos</MudNavLink>
+            </MudNavGroup>
+        </MudNavMenu>
+    </MudDrawer>
+    <MudMainContent Class="pt-16 px-16">
+        <MudContainer Class="mt-6">
+            @Body
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    bool open = false;
+
+    void ToggleDrawer()
+    {
+        open = !open;
+    }
+}
+
