@@ -1,0 +1,25 @@
+﻿@inherits ComponentBase
+
+<MudPaper Class="pa-4">
+    <MudGrid Spacing="2" Justify="Justify.Center">
+        <MudItem xs="12" sm="12" md="12" xl="12">
+            <MudText Typo="Typo.h6" Class="font-weight-bold">Condiciones de turbinas</MudText>
+        </MudItem>
+        <MudItem xs="12" md="6">
+            <MudSelect MultiSelection="true" T="string" Label="Abanico módulo" @bind-Value="Model.FanModule">
+                <MudSelectItem Value="@("SUCIO")" />
+                <MudSelectItem Value="@("QUEBRADO")" />
+                <MudSelectItem Value="@("BUEN ESTADO")" />
+            </MudSelect>
+            <MudTextField Variant="Variant.Outlined" Lines="3" T="string" Label="Comentarios" @bind-Value="Model.FanModuleComments" />
+        </MudItem>
+        <MudItem xs="12" md="6">
+            <MudSelect MultiSelection="true" T="string" Label="Abanico módulo" @bind-Value="Model.RadiatorTurbine">
+                <MudSelectItem Value="@("SUCIO")" />
+                <MudSelectItem Value="@("QUEBRADO")" />
+                <MudSelectItem Value="@("BUEN ESTADO")" />
+            </MudSelect>
+            <MudTextField Variant="Variant.Outlined" Lines="3" T="string" Label="Comentarios" @bind-Value="Model.RadiatorTurbineComments" />
+        </MudItem>
+    </MudGrid>
+</MudPaper>

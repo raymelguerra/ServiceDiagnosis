@@ -1,0 +1,19 @@
+﻿<MudPaper Class="pa-2">
+    <MudGrid Spacing="2" Justify="Justify.Center">
+        <MudItem xs="12" sm="12" md="12" xl="12">
+            <MudText Typo="Typo.h6" Class="font-weight-bold">Información del equipo</MudText>
+        </MudItem>
+        <MudItem xs="12" md="6">
+            <MudTextField Label="Marca" @bind-Value="Model.Brand" />
+        </MudItem>
+        <MudItem xs="12" md="6">
+            <MudTextField Label="Modelo" @bind-Value="Model.Model" />
+        </MudItem>
+        <MudItem xs="12" md="6">
+            <MudTextField Label="Serie" @bind-Value="Model.SerialNumber" />
+        </MudItem>
+        <MudItem xs="12" md="6">
+            <MudNumericField Label="Año de fabricación" @bind-Value="Model.ManufactureYear" />
+        </MudItem>
+    </MudGrid>
+</MudPaper>

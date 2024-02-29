@@ -1,0 +1,32 @@
+﻿@inherits ComponentBase
+
+<MudPaper Class="pa-4">
+    <MudGrid Spacing="2" Justify="Justify.Center">
+        <MudItem xs="12" sm="12" md="12" xl="12">
+            <MudText Typo="Typo.h6" Class="font-weight-bold">Condiciones de las tapas del módulo</MudText>
+        </MudItem>
+        <MudItem xs="12" md="6">
+
+            <MudSelect MultiSelection="true" T="string" Label="Lado del Motor" @bind-Value="Model.MotorSide">
+                <MudSelectItem Value="@("BUEN ESTADO")" />
+                <MudSelectItem Value="@("MARCADAS")" />
+                <MudSelectItem Value="@("QUEBRADAS")" />
+                <MudSelectItem Value="@("ONDULADAS")" />
+                <MudSelectItem Value="@("QUEMADAS")" />
+            </MudSelect>
+
+            <MudTextField Variant="Variant.Outlined" Lines="3"  T="string" Label="Comentarios" @bind-Value="Model.MotorSideComments" />
+
+        </MudItem>
+        <MudItem xs="12" md="6">
+            <MudSelect MultiSelection="true" T="string" Label="Lado de la Bomba" @bind-Value="Model.PumpSide">
+                <MudSelectItem Value="@("BUEN ESTADO")" />
+                <MudSelectItem Value="@("MARCADAS")" />
+                <MudSelectItem Value="@("QUEBRADAS")" />
+                <MudSelectItem Value="@("ONDULADAS")" />
+                <MudSelectItem Value="@("QUEMADAS")" />
+            </MudSelect>
+            <MudTextField Variant="Variant.Outlined" Lines="3" T="string" Label="Comentarios" @bind-Value="Model.PumpSideComments" />
+        </MudItem>
+    </MudGrid>
+</MudPaper>

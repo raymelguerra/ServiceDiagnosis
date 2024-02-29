@@ -1,0 +1,32 @@
+﻿@inject ISnackbar Snackbar
+
+<MudItem xs="12" md="12">
+    <MudGrid>
+        <MudItem xs="10" md="10">
+            <MudSelect MultiSelection="true" T="string" Label="@Label" @bind-Value="@Text">
+                @foreach (var item in OptionsList)
+                {
+                    <MudSelectItem Value="@(item)" />
+                }
+            </MudSelect>
+        </MudItem>
+        <MudItem xs="2" md="2">
+            <MudFileUpload T="IBrowserFile" FilesChanged="UploadFiles">
+                <ButtonTemplate>
+                    <MudIconButton HtmlTag="label"
+                                   Color="Color.Info"
+                                   Icon="@Icons.Material.Filled.PhotoCamera"
+                                   for="@context.Id">
+                    </MudIconButton>
+                </ButtonTemplate>
+            </MudFileUpload>
+        </MudItem>
+    </MudGrid>
+    <MudTextField Variant="Variant.Outlined" Lines="3" T="string" Label="Comentarios" @bind-Value="Comments" />
+    <MudGrid Justify="Justify.FlexStart" Spacing="2">
+        @foreach (var item in Images)
+        {
+            <MudImage Src="@($"data:image/png;base64,{item}")" Alt="Image" Elevation="5" Class="rounded-lg ma-5" Width="100" Height="75" />
+        }
+    </MudGrid>
+</MudItem>
