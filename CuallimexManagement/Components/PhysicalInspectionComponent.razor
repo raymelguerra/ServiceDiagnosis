@@ -1,8 +1,8 @@
 ﻿
 <MudPaper Class="pa-6">
     <MudGrid Spacing="2" Justify="Justify.Center">
-       @*  <MudItem xs="12" sm="12" md="12" xl="12">
-            <MudText Typo="Typo.h6" Class="font-weight-bold">Inspección Física</MudText>
+        @*  <MudItem xs="12" sm="12" md="12" xl="12">
+        <MudText Typo="Typo.h6" Class="font-weight-bold">Inspección Física</MudText>
         </MudItem> *@
         <MudGrid>
 
@@ -15,53 +15,45 @@
             </MudItem>
             <MudItem xs="12" sm="12" md="6" xl="6">
                 <MudNumericField Label="RPM" @bind-Value="Model.RPM" />
-                <MudSwitch Label="Se puede realizar la prueba" Color="Color.Primary" @bind-Checked="Model.TestCanBePerformed" />
+                <MudSwitch Label="Se puede realizar la prueba" Color="Color.Primary" @bind-Value="Model.TestCanBePerformed" />
                 <MudTextField Variant="Variant.Outlined" Lines="5" Label="Comentario sobre la prueba" @bind-Value="Model.TestComments" />
-                <MudSwitch Label="Es necesario desarmar el equipo" Color="Color.Primary" @bind-Checked="Model.DisassemblyRequired" />
+                <MudSwitch Label="Es necesario desarmar el equipo" Color="Color.Primary" @bind-Value="Model.DisassemblyRequired" />
             </MudItem>
 
 
             <MudItem xs="12" md="6">
                 <!-- Condiciones del Equipo -->
-                <MudSelect MultiSelection="true" T="string" Label="Condiciones del Equipo" @bind-Value="Model.EquipmentConditions">
-                    <MudSelectItem Value="@("BUENAS")" />
-                    <MudSelectItem Value="@("REGULAR")" />
-                    <MudSelectItem Value="@("MALAS")" />
-                    <MudSelectItem Value="@("SUCIO")" />
-                </MudSelect>
-                <MudTextField Variant="Variant.Outlined" Lines="3" T="string" Label="Comentarios" @bind-Value="Model.EquipmentComments" />
+                <UploadImagesWithComments @bind-Comments="@Model.EquipmentComments"
+                                          @bind-Text="@Model.EquipmentConditions"
+                                          @bind-Images="@Model.EquipmentConditionsImages"
+                                          Label="Condiciones del Equipo"
+                                          OptionsList=@( new List<string>{"BUENAS", "REGULAR", "MALAS", "SUCIO"}) />
             </MudItem>
             <MudItem xs="12" md="6">
                 <!-- Condiciones del Equipo -->
-                <MudSelect MultiSelection="true" T="string" Label="Condición del Motor" @bind-Value="Model.MotorCondition">
-                    <MudSelectItem Value="@("BUENAS")" />
-                    <MudSelectItem Value="@("REGULAR")" />
-                    <MudSelectItem Value="@("MALAS")" />
-                    <MudSelectItem Value="@("SUCIO")" />
-                </MudSelect>
-                <MudTextField Variant="Variant.Outlined" Lines="3" T="string" Label="Comentarios" @bind-Value="Model.MotorComments" />
+                <UploadImagesWithComments @bind-Comments="@Model.MotorComments"
+                                          @bind-Text="@Model.MotorCondition"
+                                          @bind-Images="@Model.MotorConditionImages"
+                                          Label="Condiciones del Motor"
+                                          OptionsList=@( new List<string>{"BUENAS", "REGULAR", "MALAS", "SUCIO"}) />
             </MudItem>
 
             <MudItem xs="12" md="6">
                 <!-- Cubierta de Motor -->
-                <MudSelect MultiSelection="true" T="string" Label="Condición de la Cubierta del Motor" @bind-Value="Model.MotorCoverCondition">
-                    <MudSelectItem Value="@("BUENAS")" />
-                    <MudSelectItem Value="@("REGULAR")" />
-                    <MudSelectItem Value="@("MALAS")" />
-                    <MudSelectItem Value="@("SUCIO")" />
-                </MudSelect>
-                <MudTextField Variant="Variant.Outlined" Lines="3" T="string" Label="Comentarios" @bind-Value="Model.MotorCoverComments" />
+                <UploadImagesWithComments @bind-Comments="@Model.MotorCoverComments"
+                                          @bind-Text="@Model.MotorCoverCondition"
+                                          @bind-Images="@Model.MotorCoverConditionImages"
+                                          Label="Condición de la Cubierta del Motor"
+                                          OptionsList=@( new List<string>{"BUENAS", "REGULAR", "MALAS", "SUCIO"}) />
             </MudItem>
 
             <MudItem xs="12" md="6">
                 <!-- Ventilador del Motor -->
-                <MudSelect MultiSelection="true" T="string" Label="Condición del Ventilador del Motor" @bind-Value="Model.MotorFanCondition">
-                    <MudSelectItem Value="@("BUENAS")" />
-                    <MudSelectItem Value="@("REGULAR")" />
-                    <MudSelectItem Value="@("MALAS")" />
-                    <MudSelectItem Value="@("SUCIO")" />
-                </MudSelect>
-                <MudTextField Variant="Variant.Outlined" Lines="3" T="string" Label="Comentarios" @bind-Value="Model.MotorFanComments" />
+                <UploadImagesWithComments @bind-Comments="@Model.MotorFanComments"
+                                          @bind-Text="@Model.MotorFanCondition"
+                                          @bind-Images="@Model.MotorFanConditionImages"
+                                          Label="Condición del Ventilador del Motor"
+                                          OptionsList=@( new List<string>{"BUENAS", "REGULAR", "MALAS", "SUCIO"}) />
             </MudItem>
         </MudGrid>
     </MudGrid>

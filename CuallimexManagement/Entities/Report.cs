@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
+using MongoDB.Driver;
 
 namespace CuallimexManagement.Entities;
 
@@ -31,10 +32,10 @@ public class Report : BaseEntity
     public string ExternalWorks { get; set; }
 
     [BsonElement("CollectionDate")]
-    public DateTime CollectionDate { get; set; }
+    public DateTime? CollectionDate { get; set; }
 
     [BsonElement("ReportDate")]
-    public DateTime ReportDate { get; set; }
+    public DateTime? ReportDate { get; set; }
 
     [BsonElement("EntryReason")]
     public string EntryReason { get; set; }
@@ -57,4 +58,75 @@ public class Report : BaseEntity
     [BsonElement("ModuleInspection")]
     public ModuleInspection ModuleInspection { get; set; }
 
+    public UpdateDefinition<Report> ToUpdateDefinition()
+    {
+        var updateBuilder = Builders<Report>.Update;
+        var updateDefinitionBuilder = Builders<Report>.Update.Combine();
+
+        // Campos de Report
+        if (!string.IsNullOrEmpty(Description))
+        {
+            updateDefinitionBuilder = updateDefinitionBuilder.Set(x => x.Description, Description);
+        }
+        if (!string.IsNullOrEmpty(Summary))
+        {
+            updateDefinitionBuilder = updateDefinitionBuilder.Set(x => x.Summary, Summary);
+        }
+        if (!string.IsNullOrEmpty(Comment))
+        {
+            updateDefinitionBuilder = updateDefinitionBuilder.Set(x => x.Comment, Comment);
+        }
+        if (!string.IsNullOrEmpty(PhysicalDamage))
+        {
+            updateDefinitionBuilder = updateDefinitionBuilder.Set(x => x.PhysicalDamage, PhysicalDamage);
+        }
+        if (!string.IsNullOrEmpty(RequiredParts))
+        {
+            updateDefinitionBuilder = updateDefinitionBuilder.Set(x => x.RequiredParts, RequiredParts);
+        }
+        if (!string.IsNullOrEmpty(ExternalWorks))
+        {
+            updateDefinitionBuilder = updateDefinitionBuilder.Set(x => x.ExternalWorks, ExternalWorks);
+        }
+        if (CollectionDate.HasValue)
+        {
+            updateDefinitionBuilder = updateDefinitionBuilder.Set(x => x.CollectionDate, CollectionDate);
+        }
+        if (ReportDate.HasValue)
+        {
+            updateDefinitionBuilder = updateDefinitionBuilder.Set(x => x.ReportDate, ReportDate);
+        }
+        if (!string.IsNullOrEmpty(EntryReason))
+        {
+            updateDefinitionBuilder = updateDefinitionBuilder.Set(x => x.EntryReason, EntryReason);
+        }
+
+        // Campos de subclases
+        if (Company != null)
+        {
+            updateDefinitionBuilder = updateDefinitionBuilder.Set(x => x.Company, Company);
+        }
+        if (Equipment != null)
+        {
+            updateDefinitionBuilder = updateDefinitionBuilder.Set(x => x.Equipment, Equipment);
+        }
+        if (Responsible != null)
+        {
+            updateDefinitionBuilder = updateDefinitionBuilder.Set(x => x.Responsible, Responsible);
+        }
+        if (EquipmentInspection != null)
+        {
+            updateDefinitionBuilder = updateDefinitionBuilder.Set(x => x.EquipmentInspection, EquipmentInspection);
+        }
+        if (PhysicalInspection != null)
+        {
+            updateDefinitionBuilder = updateDefinitionBuilder.Set(x => x.PhysicalInspection, PhysicalInspection);
+        }
+        if (ModuleInspection != null)
+        {
+            updateDefinitionBuilder = updateDefinitionBuilder.Set(x => x.ModuleInspection, ModuleInspection);
+        }
+
+        return updateDefinitionBuilder;
+    }
 }

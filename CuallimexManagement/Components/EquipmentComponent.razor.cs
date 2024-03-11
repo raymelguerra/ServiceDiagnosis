@@ -7,6 +7,9 @@ namespace CuallimexManagement.Components
     {
         [Parameter]
         public Equipment Model { get; set; }
+        [Parameter]
+        public EventCallback<Equipment> ModelChanged { get; set; }
+
         protected override async Task OnParametersSetAsync()
         {
             if (Model == null)

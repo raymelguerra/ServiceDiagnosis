@@ -3,10 +3,10 @@
 <MudItem xs="12" md="12">
     <MudGrid>
         <MudItem xs="10" md="10">
-            <MudSelect MultiSelection="true" T="string" Label="@Label" @bind-Value="@Text">
+            <MudSelect MultiSelection="true" T="string" Label="@Label" @bind-Value="@Text" @bind-SelectedValues="Options" T="string">
                 @foreach (var item in OptionsList)
                 {
-                    <MudSelectItem Value="@(item)" />
+                    <MudSelectItem Value="@(item)"/>
                 }
             </MudSelect>
         </MudItem>
@@ -23,10 +23,24 @@
         </MudItem>
     </MudGrid>
     <MudTextField Variant="Variant.Outlined" Lines="3" T="string" Label="Comentarios" @bind-Value="Comments" />
-    <MudGrid Justify="Justify.FlexStart" Spacing="2">
-        @foreach (var item in Images)
+    <MudGrid Justify="Justify.FlexStart" Spacing="1">
+        @for (int i = 0; i < Images?.Count(); i++)
         {
-            <MudImage Src="@($"data:image/png;base64,{item}")" Alt="Image" Elevation="5" Class="rounded-lg ma-5" Width="100" Height="75" />
+            var item = Images[i];
+            if (i < 3)
+            {
+                <MudItem>
+                    <MudImage Src="@($"data:image/png;base64,{item}")" Alt="Image" Elevation="5" Class="rounded-lg ma-4" Width="100" Height="75" />
+                </MudItem>
+            }
+        }
+        @if (Images?.Count() > 3)
+        {
+            <MudItem>
+                <MudPaper Height="75px" Width="100px" Elevation="5" Class="rounded-lg ma-4 d-flex align-items-center justify-content-center">
+                    <MudText>@(Images?.Count() - 3) Más...</MudText>
+                </MudPaper>
+            </MudItem>
         }
     </MudGrid>
 </MudItem>

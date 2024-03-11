@@ -14,32 +14,38 @@ namespace CuallimexManagement.Utils
         public static int MAX_HEIGTH = 600; // Maximum height
         public static async Task<byte[]> CompressImage(IBrowserFile file, int maxWidth, int maxHeight)
         {
-            // Check file size
-            if (file.Size > MAX_IMAGE_SIZE)
-            {
-                throw new ArgumentException("File size exceeds the maximum allowed size.");
-            }
-
-            using var memoryStream = new MemoryStream();
-            await file.OpenReadStream(MAX_IMAGE_SIZE).CopyToAsync(memoryStream);
-
-            using var image = Image.Load(memoryStream.ToArray());
-
-            // Resize the image
-            image.Mutate(x => x
-                .Resize(new ResizeOptions
+            try {
+                // Check file size
+                if (file.Size > MAX_IMAGE_SIZE)
                 {
-                    Mode = ResizeMode.Max,
-                    Size = new Size(maxWidth, maxHeight)
-                }));
+                    throw new ArgumentException("File size exceeds the maximum allowed size.");
+                }
 
-            using var outputStream = new MemoryStream();
-            image.Save(outputStream, new SixLabors.ImageSharp.Formats.Jpeg.JpegEncoder
-            {
-                Quality = 100 // Adjust quality (0-100)
-            }) ;
+                using var memoryStream = new MemoryStream();
+                await file.OpenReadStream(MAX_IMAGE_SIZE).CopyToAsync(memoryStream);
 
-            return outputStream.ToArray();
+                using var image = Image.Load(memoryStream.ToArray());
+
+                // Resize the image
+                image.Mutate(x => x
+                    .Resize(new ResizeOptions
+                    {
+                        Mode = ResizeMode.Max,
+                        Size = new Size(maxWidth, maxHeight)
+                    }));
+
+                using var outputStream = new MemoryStream();
+                image.Save(outputStream, new SixLabors.ImageSharp.Formats.Jpeg.JpegEncoder
+                {
+                    Quality = 100 // Adjust quality (0-100)
+                });
+
+                return outputStream.ToArray();
+            } catch {
+                // cambiar por una excepcion
+                return null;
+            }
+           
         }
     }
 }

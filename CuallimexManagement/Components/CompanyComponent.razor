@@ -1,16 +1,16 @@
 ﻿<MudPaper Class="pa-2">
     <MudGrid Spacing="2" Justify="Justify.Center">
         <MudItem xs="12" sm="12" md="12" xl="12">
-            <MudText Typo="Typo.h6" Class="font-weight-bold">Información de la comapañia</MudText>
+            <MudText Typo="Typo.h6" Class="font-weight-bold">Información del cliente</MudText>
         </MudItem>
         <MudItem xs="12" md="6">
-            <MudTextField Label="Nombre de la compañía" @bind-Value="Model.CompanyName" />
+            <MudTextField Label="Nombre de la empresa" @bind-Value="Model.CompanyName" />
         </MudItem>
         <MudItem xs="12" md="6">
             <MudTextField Label="RFC" @bind-Value="Model.TaxId" />
         </MudItem>
         <MudItem xs="12" md="12">
-            <MudTextField Variant="Variant.Outlined" Lines="1" Label="Direción fiscal" @bind-Value="Model.FiscalAddress" />
+            <MudTextField Variant="Variant.Outlined" Lines="1" Label="Dirección fiscal" @bind-Value="Model.FiscalAddress" />
         </MudItem>
     </MudGrid>
 </MudPaper>

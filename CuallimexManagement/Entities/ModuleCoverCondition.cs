@@ -20,5 +20,9 @@ public class ModuleCoverCondition
 
     [BsonElement("PumpSideComments")]
     public string PumpSideComments { get; set; } // Comentarios sobre la tapa del módulo lado bomba
+    [BsonElement("PumpSideImages")]
+    public List<string>? PumpSideImages { get; set; }
+    [BsonElement("MotorSideImages")]
+    public List<string>? MotorSideImages { get; set; }
 }
 

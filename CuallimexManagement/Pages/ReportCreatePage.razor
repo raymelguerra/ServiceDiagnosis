@@ -1,0 +1,91 @@
+﻿@page "/createreport/{ReportId?}"
+@using CuallimexManagement.Components;
+@using CuallimexManagement.Infrastructure.Interfaces
+@inject IReport ReportService
+@inject IWorkPdf PdfService
+@inject ISnackbar Snackbar
+@inject NavigationManager NavigationManager;
+
+<PageTitle>Crear diagnóstico</PageTitle>
+
+@if (Model != null)
+{
+    <MudGrid Justify="Justify.SpaceBetween" Spacing="0" Class="d-flex mud-width-full py-6">
+        <MudItem>
+            <MudSwitch Label="@(AutomticUpdate ? "Guardar en automático" : "No guardar en automático")" @bind-Value="@AutomticUpdate" Color="Color.Primary" />
+            @if(Model.Folio != null){<MudText><b>Folio:</b> @Model.Folio</MudText>}
+        </MudItem>
+        <MudItem>
+            <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Save" Color="Color.Primary" OnClick="Save">Guardar</MudButton>
+            <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.CloudDownload" Color="Color.Success" OnClick="GeneratePdf">Descargar</MudButton>
+        </MudItem>
+    </MudGrid>
+    <MudGrid>
+        <MudTabs Elevation="2" Rounded="true" ApplyEffectsToContainer="true" PanelClass="pa-6">
+            <MudTabPanel Text="Información General" Icon="@Icons.Material.Filled.Api">
+                <MudGrid>
+
+                    <MudItem Class="py-16 d-flex flex-1" xs="12" md="6">
+                        <CompanyComponent @bind-Model="Model.Company" />
+                    </MudItem>
+                    <MudItem Class="py-16 d-flex flex-1" xs="12" md="6">
+                        <EquipmentComponent @bind-Model="Model.Equipment"></EquipmentComponent>
+                    </MudItem>
+                </MudGrid>
+
+                <MudPaper Class="pa-4">
+                    <MudGrid Spacing="2" Justify="Justify.Center">
+                        <MudItem xs="12" sm="12" md="12" xl="12">
+                            <MudText Typo="Typo.h6" Class="font-weight-bold">Resumen</MudText>
+                        </MudItem>
+
+                        <MudItem xs="12" md="6">
+                            <ResponsibleComponent @bind-Model="Model.Responsible" />
+                            <MudTextField Multiline="true" Lines="1" Label="Motivo de Entrada" @bind-Value="Model.EntryReason" />
+                        </MudItem>
+
+                        <MudItem xs="12" md="6">
+                            <MudDatePicker Label="Fecha de Recolecta" @bind-Date="Model.CollectionDate" />
+                            <MudDatePicker Label="Fecha del Reporte" @bind-Date="Model.ReportDate" />
+                        </MudItem>
+
+                        <!-- Daño Físico -->
+                        <MudItem xs="12" md="6">
+                            <MudTextField Variant="Variant.Outlined" Lines="4" Label="Golpes o daños físicos en general" @bind-Value="Model.PhysicalDamage" />
+                        </MudItem>
+                        <!-- Comment -->
+                        <MudItem xs="12" md="6">
+                            <MudTextField Variant="Variant.Outlined" Lines="4" Label="Comentario" @bind-Value="Model.Comment" />
+                        </MudItem>
+
+                        <!-- Refacciones Necesarias -->
+                        <MudItem xs="12" md="6">
+                            <MudTextField Variant="Variant.Outlined" Lines="4" Label="Refacciones Necesarias" @bind-Value="Model.RequiredParts" />
+                        </MudItem>
+
+                        <!-- Trabajos Externos -->
+                        <MudItem xs="12" md="6">
+                            <MudTextField Variant="Variant.Outlined" Lines="4" Label="Trabajos Externos" @bind-Value="Model.ExternalWorks" />
+                        </MudItem>
+
+                    </MudGrid>
+                </MudPaper>
+
+            </MudTabPanel>
+            <MudTabPanel Text="Inspección física" Icon="@Icons.Material.Filled.Build">
+                <MudItem xs="12">
+                    <PhysicalInspectionComponent @bind-Model="Model.PhysicalInspection" />
+                </MudItem>
+            </MudTabPanel>
+            <MudTabPanel Text="Modulo de vacío y/o presión" Icon="@Icons.Material.Filled.BugReport">
+                <MudItem xs="12">
+                    <VacuumPressureModuleComponent @bind-Model="Model.ModuleInspection" />
+                </MudItem>
+            </MudTabPanel>
+        </MudTabs>
+
+        <!-- Inspección Física -->
+        <!-- Condición de las Tapas del Módulo -->
+    </MudGrid>
+}
+

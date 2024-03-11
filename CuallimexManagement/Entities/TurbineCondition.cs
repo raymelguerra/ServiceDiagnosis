@@ -20,4 +20,8 @@ public class TurbineCondition
 
     [BsonElement("RadiatorTurbineComments")]
     public string RadiatorTurbineComments { get; set; }
+    [BsonElement("RadiatorTurbineImages")]
+    public List<string>? RadiatorTurbineImages { get; set; }
+    [BsonElement("FanModuleImages")]
+    public List<string>? FanModuleImages { get; set; }
 }

@@ -8,6 +8,8 @@ public partial class TurbineConditionComponent : ComponentBase
 {
     [Parameter]
     public TurbineCondition Model { get; set; }
+    [Parameter]
+    public EventCallback<TurbineCondition> ModelChanged { get; set; }
 
     protected override async Task OnParametersSetAsync()
     {
@@ -15,5 +17,7 @@ public partial class TurbineConditionComponent : ComponentBase
         {
             Model = new();
         }
+        Model.FanModuleImages = Model.FanModuleImages ?? new();
+        Model.RadiatorTurbineImages = Model.RadiatorTurbineImages ?? new();
     }
 }

@@ -1,0 +1,37 @@
+﻿@page "/listreport"
+
+@using CuallimexManagement.Entities
+@using CuallimexManagement.Infrastructure.Interfaces
+@inject NavigationManager NavigationManager
+@inject IReport ReportService
+@inject ISnackbar Snackbar
+@inject IDialogService DialogService
+<PageTitle>Listado de diagnósticos</PageTitle>
+
+<MudGrid Justify="Justify.SpaceBetween" Spacing="0" Class="d-flex mud-width-full py-6">
+    <MudItem>
+        <MudText Typo="Typo.h5">Listado de diagnósticos</MudText>
+    </MudItem>
+    <MudItem>
+        <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.PostAdd" Color="Color.Primary" OnClick="() => GoToNew()">Nuevo</MudButton>
+    </MudItem>
+</MudGrid>
+<MudDataGrid Loading="@Loading" Items="@Reports" Filterable="true" FilterMode="@_filterMode" ColumnResizeMode="ResizeMode.Column" DragDropColumnReordering="true" FilterCaseSensitivity="@_caseSensitivity">
+    <Columns>
+        <PropertyColumn Property="x => x.Folio" Title="Folio" />
+        <PropertyColumn Property="x => x.Company != null ? x.Company.CompanyName : String.Empty" Title="Responsable" />
+        <PropertyColumn Property="x => x.Equipment.Brand != null ? x.Equipment.Brand : String.Empty" Title="Marca" />
+        <PropertyColumn Property="x => x.Equipment != null ? x.Equipment.Model : String.Empty" />
+        <PropertyColumn Property="x => x.Responsible != null ? x.Responsible.Name : String.Empty" Title="Responsable" />
+        <TemplateColumn Context="data" Filterable="false" Sortable="false">
+            <CellTemplate>
+                <MudIconButton Icon="@Icons.Material.Filled.Edit" Color="Color.Primary" Size="@Size.Small" OnClick="@(() => RedirectToEdit(data.Item.Id))" />
+                <MudIconButton Icon="@Icons.Material.Filled.Delete" Color="Color.Error" Size="@Size.Small" OnClick="@(() => DeleteDiagnosis(data.Item.Id))" />
+            </CellTemplate>
+        </TemplateColumn>
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="Report" />
+    </PagerContent>
+</MudDataGrid>
+@* } *@

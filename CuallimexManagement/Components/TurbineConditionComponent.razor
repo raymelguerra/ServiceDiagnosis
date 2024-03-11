@@ -6,20 +6,18 @@
             <MudText Typo="Typo.h6" Class="font-weight-bold">Condiciones de turbinas</MudText>
         </MudItem>
         <MudItem xs="12" md="6">
-            <MudSelect MultiSelection="true" T="string" Label="Abanico módulo" @bind-Value="Model.FanModule">
-                <MudSelectItem Value="@("SUCIO")" />
-                <MudSelectItem Value="@("QUEBRADO")" />
-                <MudSelectItem Value="@("BUEN ESTADO")" />
-            </MudSelect>
-            <MudTextField Variant="Variant.Outlined" Lines="3" T="string" Label="Comentarios" @bind-Value="Model.FanModuleComments" />
+            <UploadImagesWithComments @bind-Comments="@Model.FanModuleComments"
+                                      @bind-Text="@Model.FanModule"
+                                          @bind-Images="@Model.FanModuleImages"
+                                      Label="Abanico módulo"
+                                      OptionsList=@( new List<string>{"SUCIO", "QUEBRADO", "BUEN ESTADO"}) />
         </MudItem>
         <MudItem xs="12" md="6">
-            <MudSelect MultiSelection="true" T="string" Label="Abanico módulo" @bind-Value="Model.RadiatorTurbine">
-                <MudSelectItem Value="@("SUCIO")" />
-                <MudSelectItem Value="@("QUEBRADO")" />
-                <MudSelectItem Value="@("BUEN ESTADO")" />
-            </MudSelect>
-            <MudTextField Variant="Variant.Outlined" Lines="3" T="string" Label="Comentarios" @bind-Value="Model.RadiatorTurbineComments" />
+            <UploadImagesWithComments @bind-Comments="@Model.RadiatorTurbineComments"
+                                      @bind-Text="@Model.RadiatorTurbine"
+                                      @bind-Images="@Model.RadiatorTurbineImages"
+                                      Label="Radiador de turbina"
+                                      OptionsList=@( new List<string>{"SUCIO", "QUEBRADO", "BUEN ESTADO"}) />
         </MudItem>
     </MudGrid>
 </MudPaper>

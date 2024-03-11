@@ -15,6 +15,8 @@ namespace CuallimexManagement.Entities
 
         [BsonElement("EquipmentComments")]
         public string EquipmentComments { get; set; } // Comentarios sobre las condiciones del equipo
+        [BsonElement("EquipmentConditionsImages")]
+        public List<string>? EquipmentConditionsImages { get; set; }
 
         // Condición del Motor
         [BsonElement("MotorCondition")]
@@ -22,6 +24,9 @@ namespace CuallimexManagement.Entities
 
         [BsonElement("MotorComments")]
         public string MotorComments { get; set; } // Comentarios sobre la condición del motor
+        
+        [BsonElement("MotorConditionImages")]
+        public List<string>? MotorConditionImages { get; set; }
 
         // Cubierta de Motor
         [BsonElement("MotorCoverCondition")]
@@ -29,6 +34,9 @@ namespace CuallimexManagement.Entities
 
         [BsonElement("MotorCoverComments")]
         public string MotorCoverComments { get; set; } // Comentarios sobre la cubierta del motor
+        
+        [BsonElement("MotorCoverImages")]
+        public List<string>? MotorCoverConditionImages { get; set; }
 
         // Ventilador del Motor
         [BsonElement("MotorFanCondition")]
@@ -36,6 +44,9 @@ namespace CuallimexManagement.Entities
 
         [BsonElement("MotorFanComments")]
         public string MotorFanComments { get; set; } // Comentarios sobre el ventilador del motor
+        
+        [BsonElement("MotorFanConditionImages")]
+        public List<string>? MotorFanConditionImages { get; set; }
 
         // Se puede realizar prueba
         [BsonElement("TestCanBePerformed")]
