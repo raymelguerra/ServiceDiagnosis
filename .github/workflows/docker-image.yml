@@ -21,7 +21,7 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build -t raymelguerra/service-diagnosis:${{ github.sha }} .
+          docker build -t raymelguerra/service-diagnosis:${{ github.sha }} -f CuallimexManagement/Dockerfile .
           docker push raymelguerra/service-diagnosis:${{ github.sha }}
       - name: Build Docker Image
         run: |
