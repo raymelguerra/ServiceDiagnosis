@@ -22,14 +22,14 @@ jobs:
       - name: Build and Push Docker Image
         run: |
           docker build -t raymelguerra/ServiceDiagnosis:${{ github.sha }} .
-          docker push raymelguerra/ServiceDiagnosis:${{ github.sha }}
+          docker push raymelguerra/service-diagnosis:${{ github.sha }}
       - name: Build Docker Image
         run: |
-          IMAGE_TAG="raymelguerra/ServiceDiagnosis:${{ github.sha }}"
+          IMAGE_TAG="raymelguerra/service-diagnosis:${{ github.sha }}"
           docker build -t $IMAGE_TAG .
           docker push $IMAGE_TAG
   
           # Etiqueta adicional con "latest"
-          LATEST_TAG="raymelguerra/ServiceDiagnosis:latest"
+          LATEST_TAG="raymelguerra/service-diagnosis:latest"
           docker tag $IMAGE_TAG $LATEST_TAG
           docker push $LATEST_TAG
