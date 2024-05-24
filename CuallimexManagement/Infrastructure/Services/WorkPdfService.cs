@@ -1,6 +1,8 @@
 ﻿using CuallimexManagement.Entities;
 using CuallimexManagement.Infrastructure.Interfaces;
 using OfficeOpenXml;
+using PdfSharpCore.Drawing;
+using PdfSharpCore.Pdf;
 
 namespace CuallimexManagement.Infrastructure.Services;
 public class WorkPdfService : IWorkPdf
@@ -354,6 +356,29 @@ public class WorkPdfService : IWorkPdf
                 return await excelPackage.GetAsByteArrayAsync();
                 #endregion
             }
+        }
+    }
+
+    public async Task<byte[]> DownloadEvidence(Report report)
+    {
+        using (var pdf = new PdfDocument())
+        {
+            PdfPage page = pdf.AddPage();
+            XGraphics gfx = XGraphics.FromPdfPage(page);
+            XFont font = new XFont("Verdana", 20, XFontStyle.Regular);
+
+            // Dibujar texto en la página
+            gfx.DrawString("Hola, este es un PDF generado desde Blazor", font, XBrushes.Black,
+                new XRect(0, 0, page.Width.Point, page.Height.Point),
+                XStringFormats.Center);
+
+            byte[] pdfBytes;
+            using (var stream = new MemoryStream())
+            {
+                pdf.Save(stream, false);
+                pdfBytes = stream.ToArray();
+            }
+            return pdfBytes;
         }
     }
 

@@ -12,12 +12,27 @@
 {
     <MudGrid Justify="Justify.SpaceBetween" Spacing="0" Class="d-flex mud-width-full py-6">
         <MudItem>
-            <MudSwitch Label="@(AutomticUpdate ? "Guardar en automático" : "No guardar en automático")" @bind-Value="@AutomticUpdate" Color="Color.Primary" />
-            @if(Model.Folio != null){<MudText><b>Folio:</b> @Model.Folio</MudText>}
+            @* <MudSwitch Label="@(AutomticUpdate ? "Guardar en automático" : "No guardar en automático")" @bind-Value="@AutomticUpdate" Color="Color.Primary" /> *@
+            @if (Model.Folio != null)
+            {
+                <MudText><b>Folio:</b> @Model.Folio</MudText>
+            }
         </MudItem>
         <MudItem>
-            <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Save" Color="Color.Primary" OnClick="Save">Guardar</MudButton>
-            <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.CloudDownload" Color="Color.Success" OnClick="GeneratePdf">Descargar</MudButton>
+            <MudGrid>
+                <MudItem>
+                    <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Save" Color="Color.Primary" OnClick="Save">Guardar</MudButton>
+                </MudItem>
+                <MudItem>
+                    <MudButtonGroup Color="Color.Primary" Variant="Variant.Outlined">
+                        <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.CloudDownload" Color="Color.Success" OnClick="GeneratePdf">@ActionButton</MudButton>
+                        <MudMenu AnchorOrigin="Origin.TopCenter" Icon="@Icons.Material.Filled.ArrowDropDown" Style="align-self: auto;">
+                            <MudMenuItem OnClick="() => SetButtonText(0)">Diagnóstico</MudMenuItem>
+                            <MudMenuItem OnClick="() => SetButtonText(1)">Evidencias</MudMenuItem>
+                        </MudMenu>
+                    </MudButtonGroup>
+                </MudItem>
+            </MudGrid>
         </MudItem>
     </MudGrid>
     <MudGrid>

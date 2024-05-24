@@ -6,5 +6,6 @@ namespace CuallimexManagement.Infrastructure.Interfaces
     {
         public Task<byte[]> Show(Report report);
         public Task<byte[]> Download(Report report);
+        public Task<byte[]> DownloadEvidence(Report report);
     }
 }

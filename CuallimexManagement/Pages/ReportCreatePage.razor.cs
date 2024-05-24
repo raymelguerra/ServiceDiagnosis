@@ -11,6 +11,7 @@ public partial class ReportCreatePage : ComponentBase
     [Parameter]
     public string ReportId { get; set; }
 
+    private string ActionButton { get; set; } = "Diagnóstico";
     public Report Model { get; set; }
     public bool AutomticUpdate { get; set; } = true;
     protected override async Task OnParametersSetAsync()
@@ -70,10 +71,30 @@ public partial class ReportCreatePage : ComponentBase
     }
 
     public async Task GeneratePdf() {
-        var excelBytes = await PdfService.Download(Model);
 
-        var fileName = $"{Model.Folio}.xlsx";
-        var contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-        await FileUtil.SaveAs(NavigationManager, fileName, excelBytes, contentType);
+        if (ActionButton.Equals("Diagnóstico")) {
+            var excelBytes = await PdfService.Download(Model);
+
+            var fileName = $"{Model.Folio}.xlsx";
+            var contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+            await FileUtil.SaveAs(NavigationManager, fileName, excelBytes, contentType);
+        }
+        else if(ActionButton.Equals("Evidencias")) {
+            var excelBytes = await PdfService.DownloadEvidence(Model);
+
+            var fileName = $"{Model.Folio}.pdf";
+            var contentType = "application/pdf";
+            await FileUtil.SaveAs(NavigationManager, fileName, excelBytes, contentType);
+        }
+    }
+
+    public void SetButtonText(int option) {
+        switch (option)
+        {
+            case 0: ActionButton = "Diagnóstico"; break;
+            case 1: ActionButton = "Evidencias"; break;
+            default:
+                break;
+        }
     }
 }

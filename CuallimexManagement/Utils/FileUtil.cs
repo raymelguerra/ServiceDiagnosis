@@ -5,19 +5,25 @@ public static class FileUtil
 {
     public static async Task SaveAs(NavigationManager navigationManager, string fileName, byte[] fileContent, string contentType)
     {
-        var memoryStream = new MemoryStream(fileContent);
-        var buffer = new byte[16 * 1024];
-        var resultStream = new MemoryStream();
-        int bytesRead;
-        while ((bytesRead = await memoryStream.ReadAsync(buffer, 0, buffer.Length)) > 0)
+        if (contentType == "application/pdf")
         {
-            await resultStream.WriteAsync(buffer, 0, bytesRead);
+            var pdfDataUrl = $"data:{contentType};base64,{Convert.ToBase64String(fileContent)}";
+
+            navigationManager.NavigateTo(pdfDataUrl, true);
         }
-        resultStream.Position = 0;
+        else
+        {
+            var memoryStream = new MemoryStream(fileContent);
+            var buffer = new byte[16 * 1024];
+            var resultStream = new MemoryStream();
+            int bytesRead;
+            while ((bytesRead = await memoryStream.ReadAsync(buffer, 0, buffer.Length)) > 0)
+            {
+                await resultStream.WriteAsync(buffer, 0, bytesRead);
+            }
+            resultStream.Position = 0;
 
-        var contentDisposition = $"attachment; filename=\"{fileName}\"";
-
-        // Configurar la descarga usando NavigationManager
-        navigationManager.NavigateTo($"data:{contentType};base64,{Convert.ToBase64String(resultStream.ToArray())}", true);
+            navigationManager.NavigateTo($"data:{contentType};base64,{Convert.ToBase64String(resultStream.ToArray())}", true);
+        }
     }
 }

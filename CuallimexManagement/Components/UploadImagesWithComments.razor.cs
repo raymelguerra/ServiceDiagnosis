@@ -80,5 +80,7 @@ namespace CuallimexManagement.Components
             }
 
         }
+
+        void ClosePhoto() { }
     }
 }

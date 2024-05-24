@@ -6,7 +6,7 @@
             <MudSelect MultiSelection="true" T="string" Label="@Label" @bind-Value="@Text" @bind-SelectedValues="Options" T="string">
                 @foreach (var item in OptionsList)
                 {
-                    <MudSelectItem Value="@(item)"/>
+                    <MudSelectItem Value="@(item)" />
                 }
             </MudSelect>
         </MudItem>
@@ -29,7 +29,7 @@
             var item = Images[i];
             if (i < 3)
             {
-                <MudItem>
+                <MudItem Class="image">
                     <MudImage Src="@($"data:image/png;base64,{item}")" Alt="Image" Elevation="5" Class="rounded-lg ma-4" Width="100" Height="75" />
                 </MudItem>
             }
