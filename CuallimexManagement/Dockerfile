@@ -11,15 +11,16 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["CuallimexManagement.csproj", "."]
-RUN dotnet restore "./CuallimexManagement.csproj"
+COPY ["./CuallimexManagement/CuallimexManagement.csproj", "CuallimexManagement/"]
+RUN dotnet restore "./CuallimexManagement/CuallimexManagement.csproj"
+
 COPY . .
-WORKDIR "/src/."
-RUN dotnet build "./CuallimexManagement.csproj" -c %BUILD_CONFIGURATION% -o /app/build
+WORKDIR "/src/CuallimexManagement"
+RUN dotnet build "./CuallimexManagement.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./CuallimexManagement.csproj" -c %BUILD_CONFIGURATION% -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./CuallimexManagement.csproj" -c BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
