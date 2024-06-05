@@ -1,0 +1,9 @@
+﻿namespace CuallimexManagement.Components.ErrorPages;
+
+public partial class CustomNotFound
+{
+    private void GoBack()
+    {
+        Navigation.NavigateTo("/home");
+    }
+}

@@ -5,6 +5,7 @@
 @inject IWorkPdf PdfService
 @inject ISnackbar Snackbar
 @inject NavigationManager NavigationManager;
+@attribute [Authorize(Roles = "admin,tecnico")]
 
 <PageTitle>Crear diagnóstico</PageTitle>
 

@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "Wn+7LUF4Pv6k87I7dkxHqM+7y5/elLICQz9l8Fad1UizkUhL+S+3ga4ixI7Swj9iF6XQ01ciiGncawinmWkVOw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rayme\\source\\repos\\raymelguerra\\ServiceDiagnosis\\Oauth2.sdk\\Oauth2.sdk.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rayme\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.4\\microsoft.aspnetcore.authentication.jwtbearer.8.0.4.nupkg.sha512",
+    "C:\\Users\\rayme\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\8.0.4\\microsoft.aspnetcore.authentication.openidconnect.8.0.4.nupkg.sha512",
+    "C:\\Users\\rayme\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\rayme\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.1.2\\microsoft.identitymodel.abstractions.7.1.2.nupkg.sha512",
+    "C:\\Users\\rayme\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.1.2\\microsoft.identitymodel.jsonwebtokens.7.1.2.nupkg.sha512",
+    "C:\\Users\\rayme\\.nuget\\packages\\microsoft.identitymodel.logging\\7.1.2\\microsoft.identitymodel.logging.7.1.2.nupkg.sha512",
+    "C:\\Users\\rayme\\.nuget\\packages\\microsoft.identitymodel.protocols\\7.1.2\\microsoft.identitymodel.protocols.7.1.2.nupkg.sha512",
+    "C:\\Users\\rayme\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\7.1.2\\microsoft.identitymodel.protocols.openidconnect.7.1.2.nupkg.sha512",
+    "C:\\Users\\rayme\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.1.2\\microsoft.identitymodel.tokens.7.1.2.nupkg.sha512",
+    "C:\\Users\\rayme\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\rayme\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.1.2\\system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

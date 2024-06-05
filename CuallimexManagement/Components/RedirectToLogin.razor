@@ -1,0 +1,34 @@
+﻿@using CuallimexManagement.Components.ErrorPages
+@using Microsoft.Extensions.Options
+@using Oauth2.sdk.Models
+@inject NavigationManager Navigation
+@inject IOptions<CredentialsSettings> options
+
+@if (_isAuthenticated)
+{
+    <Forbidden/>
+}
+else
+{
+    <p>Authenticating...</p>
+}
+
+@code {
+
+    [CascadingParameter]
+    private Task<AuthenticationState> _authenticationStateTask { get; set; }
+
+    private bool _isAuthenticated;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await _authenticationStateTask;
+
+        _isAuthenticated = authState.User.Identity!.IsAuthenticated;
+
+        if (!_isAuthenticated)
+        {
+            Navigation.NavigateTo($"Login?redirectUri={Uri.EscapeDataString(Navigation.Uri)}", true);
+        }
+    }
+}

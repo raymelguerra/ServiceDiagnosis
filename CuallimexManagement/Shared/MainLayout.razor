@@ -1,4 +1,5 @@
-﻿@inherits LayoutComponentBase
+﻿@using CuallimexManagement.Components
+@inherits LayoutComponentBase
 
 <PageTitle>CuallimexManagement</PageTitle>
 
@@ -10,8 +11,8 @@
 <MudLayout>
     <MudAppBar Elevation="1">
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@ToggleDrawer" />
+        <AccessControl/>
         <MudSpacer />
-        <MudIconButton Icon="@Icons.Rounded.Person" Color="Color.Inherit" Link="#" Target="_blank" />
     </MudAppBar>
     <MudDrawer @bind-Open="@open" Variant="@DrawerVariant.Temporary" Breakpoint="@Breakpoint.Sm" Elevation="1">
         <MudDrawerHeader hidden="@(!open)">

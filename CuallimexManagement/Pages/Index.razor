@@ -1,9 +1,22 @@
 ﻿@page "/"
+@page "/home"
+@using Oauth2.sdk
+@using System.Globalization
 
-<PageTitle>Index</PageTitle>
+@attribute [Authorize(Roles = "admin,tecnico,client")]
+@inject IUserManagementService UserManagement
+@inject IRolesManagementService RolesManagement
 
-<h1>Hola!!!</h1>
+<PageTitle>Home</PageTitle>
 
-Bienvenido al sitio web integrado para Cuallimex.
-
-<SurveyPrompt Title="Seguiremos agregando más funcionalidades" />
+<MudCard Outlined="true" Elevation="3" Class="grey lighten-3">
+    <MudCardContent>
+        <MudText Typo="Typo.h6">Bienvenido</MudText>
+        <MudText Class="mb-5" Typo="Typo.h5">@UserManagement.GetUserFullNames() (@UserManagement.GetUserName())</MudText>
+        <MudText Typo="Typo.body1">Usted está asociado al rol:</MudText>
+        @foreach (var role in userRoles)
+        {
+            <MudChip Color="Color.Primary">@(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(role))</MudChip>
+        }
+    </MudCardContent>
+</MudCard>

@@ -1,0 +1,29 @@
+﻿@using Microsoft.Extensions.Options
+@using Oauth2.sdk.Models
+@inject NavigationManager Navigation
+@inject IOptions<CredentialsSettings> options
+
+<AuthorizeView>
+    <Authorized>
+        <MudGrid Spacing="4" Justify="Justify.FlexEnd">
+            <MudItem>
+                <MudMenu>
+                    <ActivatorContent>
+                        <MudIcon Title="@context.User.Identity?.Name" Icon="@Icons.Material.Filled.Person" Size="Size.Medium"></MudIcon>
+                    </ActivatorContent>
+                    <ChildContent>
+                        <MudMenuItem OnClick="OnClick">Logout</MudMenuItem>
+                    </ChildContent>
+                </MudMenu>
+            </MudItem>
+        </MudGrid>
+    </Authorized>
+    <NotAuthorized>
+        <MudIconButton Icon="@Icons.Material.Filled.Login" Color="Color.Inherit" Size="Size.Medium" Href="@($"login?redirectUri={Uri.EscapeDataString(Navigation.Uri)}")"></MudIconButton>
+
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    private void OnClick(MouseEventArgs args) => Navigation.NavigateTo($"Logout", true);
+}

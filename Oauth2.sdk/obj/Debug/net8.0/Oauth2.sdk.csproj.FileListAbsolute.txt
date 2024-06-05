@@ -1,0 +1,26 @@
+D:\Personal\laptop negra\Proyectos\Software fidelito\V2\V2.1OK\ClinicApp\Oauth2.sdk\bin\Debug\net8.0\Oauth2.sdk.deps.json
+D:\Personal\laptop negra\Proyectos\Software fidelito\V2\V2.1OK\ClinicApp\Oauth2.sdk\bin\Debug\net8.0\Oauth2.sdk.dll
+D:\Personal\laptop negra\Proyectos\Software fidelito\V2\V2.1OK\ClinicApp\Oauth2.sdk\bin\Debug\net8.0\Oauth2.sdk.pdb
+D:\Personal\laptop negra\Proyectos\Software fidelito\V2\V2.1OK\ClinicApp\Oauth2.sdk\obj\Debug\net8.0\Oauth2.sdk.csproj.AssemblyReference.cache
+D:\Personal\laptop negra\Proyectos\Software fidelito\V2\V2.1OK\ClinicApp\Oauth2.sdk\obj\Debug\net8.0\Oauth2.sdk.GeneratedMSBuildEditorConfig.editorconfig
+D:\Personal\laptop negra\Proyectos\Software fidelito\V2\V2.1OK\ClinicApp\Oauth2.sdk\obj\Debug\net8.0\Oauth2.sdk.AssemblyInfoInputs.cache
+D:\Personal\laptop negra\Proyectos\Software fidelito\V2\V2.1OK\ClinicApp\Oauth2.sdk\obj\Debug\net8.0\Oauth2.sdk.AssemblyInfo.cs
+D:\Personal\laptop negra\Proyectos\Software fidelito\V2\V2.1OK\ClinicApp\Oauth2.sdk\obj\Debug\net8.0\Oauth2.sdk.csproj.CoreCompileInputs.cache
+D:\Personal\laptop negra\Proyectos\Software fidelito\V2\V2.1OK\ClinicApp\Oauth2.sdk\obj\Debug\net8.0\Oauth2.sdk.sourcelink.json
+D:\Personal\laptop negra\Proyectos\Software fidelito\V2\V2.1OK\ClinicApp\Oauth2.sdk\obj\Debug\net8.0\Oauth2.sdk.dll
+D:\Personal\laptop negra\Proyectos\Software fidelito\V2\V2.1OK\ClinicApp\Oauth2.sdk\obj\Debug\net8.0\refint\Oauth2.sdk.dll
+D:\Personal\laptop negra\Proyectos\Software fidelito\V2\V2.1OK\ClinicApp\Oauth2.sdk\obj\Debug\net8.0\Oauth2.sdk.pdb
+D:\Personal\laptop negra\Proyectos\Software fidelito\V2\V2.1OK\ClinicApp\Oauth2.sdk\obj\Debug\net8.0\ref\Oauth2.sdk.dll
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\Oauth2.sdk\bin\Debug\net8.0\Oauth2.sdk.deps.json
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\Oauth2.sdk\bin\Debug\net8.0\Oauth2.sdk.dll
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\Oauth2.sdk\bin\Debug\net8.0\Oauth2.sdk.pdb
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\Oauth2.sdk\obj\Debug\net8.0\Oauth2.sdk.csproj.AssemblyReference.cache
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\Oauth2.sdk\obj\Debug\net8.0\Oauth2.sdk.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\Oauth2.sdk\obj\Debug\net8.0\Oauth2.sdk.AssemblyInfoInputs.cache
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\Oauth2.sdk\obj\Debug\net8.0\Oauth2.sdk.AssemblyInfo.cs
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\Oauth2.sdk\obj\Debug\net8.0\Oauth2.sdk.csproj.CoreCompileInputs.cache
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\Oauth2.sdk\obj\Debug\net8.0\Oauth2.sdk.sourcelink.json
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\Oauth2.sdk\obj\Debug\net8.0\Oauth2.sdk.dll
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\Oauth2.sdk\obj\Debug\net8.0\refint\Oauth2.sdk.dll
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\Oauth2.sdk\obj\Debug\net8.0\Oauth2.sdk.pdb
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\Oauth2.sdk\obj\Debug\net8.0\ref\Oauth2.sdk.dll

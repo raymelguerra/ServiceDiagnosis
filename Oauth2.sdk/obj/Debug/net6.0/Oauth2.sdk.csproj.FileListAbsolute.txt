@@ -1,0 +1,12 @@
+C:\Users\rayme\source\repos\ipcs.net\Auth\Oauth2.sdk\bin\Debug\net6.0\Oauth2.sdk.deps.json
+C:\Users\rayme\source\repos\ipcs.net\Auth\Oauth2.sdk\bin\Debug\net6.0\Oauth2.sdk.dll
+C:\Users\rayme\source\repos\ipcs.net\Auth\Oauth2.sdk\bin\Debug\net6.0\Oauth2.sdk.pdb
+C:\Users\rayme\source\repos\ipcs.net\Auth\Oauth2.sdk\obj\Debug\net6.0\Oauth2.sdk.csproj.AssemblyReference.cache
+C:\Users\rayme\source\repos\ipcs.net\Auth\Oauth2.sdk\obj\Debug\net6.0\Oauth2.sdk.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rayme\source\repos\ipcs.net\Auth\Oauth2.sdk\obj\Debug\net6.0\Oauth2.sdk.AssemblyInfoInputs.cache
+C:\Users\rayme\source\repos\ipcs.net\Auth\Oauth2.sdk\obj\Debug\net6.0\Oauth2.sdk.AssemblyInfo.cs
+C:\Users\rayme\source\repos\ipcs.net\Auth\Oauth2.sdk\obj\Debug\net6.0\Oauth2.sdk.csproj.CoreCompileInputs.cache
+C:\Users\rayme\source\repos\ipcs.net\Auth\Oauth2.sdk\obj\Debug\net6.0\Oauth2.sdk.dll
+C:\Users\rayme\source\repos\ipcs.net\Auth\Oauth2.sdk\obj\Debug\net6.0\refint\Oauth2.sdk.dll
+C:\Users\rayme\source\repos\ipcs.net\Auth\Oauth2.sdk\obj\Debug\net6.0\Oauth2.sdk.pdb
+C:\Users\rayme\source\repos\ipcs.net\Auth\Oauth2.sdk\obj\Debug\net6.0\ref\Oauth2.sdk.dll

@@ -6,6 +6,9 @@
 @inject IReport ReportService
 @inject ISnackbar Snackbar
 @inject IDialogService DialogService
+
+@attribute [Authorize(Roles = "admin,tecnico")]
+
 <PageTitle>Listado de diagnósticos</PageTitle>
 
 <MudGrid Justify="Justify.SpaceBetween" Spacing="0" Class="d-flex mud-width-full py-6">

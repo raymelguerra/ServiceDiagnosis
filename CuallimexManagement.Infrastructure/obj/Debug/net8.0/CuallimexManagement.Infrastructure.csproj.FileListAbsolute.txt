@@ -1,0 +1,12 @@
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\CuallimexManagement.Infrastructure\bin\Debug\net8.0\CuallimexManagement.Infrastructure.deps.json
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\CuallimexManagement.Infrastructure\bin\Debug\net8.0\CuallimexManagement.Infrastructure.dll
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\CuallimexManagement.Infrastructure\bin\Debug\net8.0\CuallimexManagement.Infrastructure.pdb
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\CuallimexManagement.Infrastructure\obj\Debug\net8.0\CuallimexManagement.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\CuallimexManagement.Infrastructure\obj\Debug\net8.0\CuallimexManagement.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\CuallimexManagement.Infrastructure\obj\Debug\net8.0\CuallimexManagement.Infrastructure.AssemblyInfo.cs
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\CuallimexManagement.Infrastructure\obj\Debug\net8.0\CuallimexManagement.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\CuallimexManagement.Infrastructure\obj\Debug\net8.0\CuallimexManagement.Infrastructure.sourcelink.json
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\CuallimexManagement.Infrastructure\obj\Debug\net8.0\CuallimexManagement.Infrastructure.dll
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\CuallimexManagement.Infrastructure\obj\Debug\net8.0\refint\CuallimexManagement.Infrastructure.dll
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\CuallimexManagement.Infrastructure\obj\Debug\net8.0\CuallimexManagement.Infrastructure.pdb
+C:\Users\rayme\source\repos\raymelguerra\ServiceDiagnosis\CuallimexManagement.Infrastructure\obj\Debug\net8.0\ref\CuallimexManagement.Infrastructure.dll

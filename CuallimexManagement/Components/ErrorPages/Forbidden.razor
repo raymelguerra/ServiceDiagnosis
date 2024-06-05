@@ -1,0 +1,42 @@
+﻿@page "/forbidden"
+@inject NavigationManager Navigation
+
+@if (UserRol == "guest")
+{
+    <MudCard Elevation="2" Style="margin-top:5px;border-radius:0.5rem;background-color:antiquewhite">
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Align="Align.Center">
+                    <MudImage ObjectFit="ObjectFit.Fill" Width="150" Src="img/cuallimex_logo.png" Alt="403" Class="rounded-lg" />
+                </MudText>
+                <MudText Typo="Typo.h3" Align="Align.Center">Restricted Access</MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudText Typo="Typo.h5" Align="Align.Center">Wait please... an administrator is setting up everything in your account.</MudText>
+        </MudCardContent>
+    </MudCard>
+}
+else
+{
+    <MudCard Elevation="2" Style="margin-top:5px;border-radius:0.5rem;background-color:antiquewhite">
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Align="Align.Center">
+                    <MudImage ObjectFit="ObjectFit.Fill" Width="200" Src="img/cuallimex_logo.png" Alt="Cuallimex logo" Class="rounded-lg" />
+                </MudText>
+                <MudText Typo="Typo.h3" Align="Align.Center">Aceso denegado</MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudText Typo="Typo.h5" Align="Align.Center">Usted no tiene permisos suficientes para acceder a este recurso.</MudText>
+        </MudCardContent>
+    </MudCard>
+    <MudButton StartIcon="@Icons.Material.Filled.Home"
+               Class="mt-5"
+               Variant="Variant.Text"
+               Color="Color.Primary"
+               OnClick="GoBack">
+        Home
+    </MudButton>
+}
