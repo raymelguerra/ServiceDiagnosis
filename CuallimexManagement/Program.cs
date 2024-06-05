@@ -6,6 +6,7 @@ using MudBlazor.Services;
 using Oauth2.sdk.Models;
 using Oauth2.sdk.DependencyInjection;
 using OfficeOpenXml;
+using CuallimexManagement.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -59,7 +60,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-// app.UseHttpsRedirection();
+app.UseMiddleware<ConvertToHttpsUriMiddleware>();
+app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 
