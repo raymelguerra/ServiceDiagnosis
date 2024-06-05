@@ -50,6 +50,9 @@ builder.Services.AddTransient<ISecurityManagement, SecurityManagementService>();
 builder.Services.AddSecurityClientApplication(builder.Configuration);
 builder.Services.AddHttpClient();
 
+// Add convert to https middleware
+builder.Services.AddTransient<ConvertToHttpsUriMiddleware>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
