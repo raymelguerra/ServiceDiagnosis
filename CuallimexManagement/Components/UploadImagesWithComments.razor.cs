@@ -3,11 +3,6 @@ using CuallimexManagement.Utils;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using MudBlazor;
-using SixLabors.ImageSharp;
-using SixLabors.ImageSharp.Formats.Png;
-using SixLabors.ImageSharp.Processing;
-using System.Buffers.Text;
-using static MongoDB.Driver.WriteConcern;
 
 namespace CuallimexManagement.Components
 {
@@ -59,12 +54,28 @@ namespace CuallimexManagement.Components
         }
         private async void UploadFiles(IBrowserFile file)
         {
+            if(file.ContentType != "image/jpeg" && file.ContentType != "image/png" && file.ContentType != "image/jpg")
+            {
+                Snackbar.Add($"El archivo {file.Name} no es una imagen válida.", Severity.Error);
+                return;
+            }
+            AddLoadingImage();
             var image = await GetFileBytesAsync(file);
             if (image != null || image.Length > 0)
             {
-                Images.Add(Convert.ToBase64String(image));
+                Images.Add($"data:{file.ContentType};base64,{Convert.ToBase64String(image)}"); // image/png
+                ClearLoadingImage();
                 StateHasChanged();
             }
+        }
+
+        private void AddLoadingImage() {
+            Images.Add("img/load.gif");
+            StateHasChanged();
+        }
+        private void ClearLoadingImage() {
+            Images.Remove("img/load.gif");
+            StateHasChanged();
         }
 
         async Task<byte[]> GetFileBytesAsync(IBrowserFile file)

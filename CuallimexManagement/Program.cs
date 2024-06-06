@@ -44,15 +44,15 @@ builder.Services.AddScoped<IWorkPdf, WorkPdfService>();
 
 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
-// Add security
 builder.Services.Configure<CredentialsSettings>(builder.Configuration.GetSection("CredentialsSettings"));
-builder.Services.AddTransient<ISecurityManagement, SecurityManagementService>();
-builder.Services.AddSecurityClientApplication(builder.Configuration);
-builder.Services.AddHttpClient();
 
 // Add convert to https middleware
 builder.Services.AddTransient<ConvertToHttpsUriMiddleware>();
-// esto es una prueba 
+
+// Add security
+builder.Services.AddTransient<ISecurityManagement, SecurityManagementService>();
+builder.Services.AddSecurityClientApplication(builder.Configuration);
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 

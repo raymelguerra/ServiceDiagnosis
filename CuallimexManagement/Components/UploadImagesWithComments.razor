@@ -11,7 +11,7 @@
             </MudSelect>
         </MudItem>
         <MudItem xs="2" md="2">
-            <MudFileUpload T="IBrowserFile" FilesChanged="UploadFiles">
+            <MudFileUpload T="IBrowserFile" FilesChanged="UploadFiles" >
                 <ButtonTemplate>
                     <MudIconButton HtmlTag="label"
                                    Color="Color.Info"
@@ -30,7 +30,7 @@
             if (i < 3)
             {
                 <MudItem Class="image">
-                    <MudImage Src="@($"data:image/png;base64,{item}")" Alt="Image" Elevation="5" Class="rounded-lg ma-4" Width="100" Height="75" />
+                    <MudImage Src="@(item)" Alt="Image" Elevation="5" Class="rounded-lg ma-4" Width="100" Height="75" />
                 </MudItem>
             }
         }
