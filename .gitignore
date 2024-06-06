@@ -4,5 +4,9 @@
 
 /.vs
 /CuallimexManagement/.vs
-/CuallimexManagement/bin/Debug/net6.0
+/CuallimexManagement/bin/Debug/net8.0
 /CuallimexManagement/obj
+/CuallimexManagement/bin/Debug/net8.0/CuallimexManagement.exe
+/CuallimexManagement/bin/Debug/net8.0/CuallimexManagement.pdb
+/CuallimexManagement/bin/Debug/net8.0/CuallimexManagement.staticwebassets.runtime.json
+/CuallimexManagement/bin/Debug/net6.0/CuallimexManagement.staticwebassets.runtime.CT.json
